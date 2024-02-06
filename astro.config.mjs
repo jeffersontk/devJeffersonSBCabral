@@ -7,7 +7,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   integrations: [tailwind(), sanityIntegration({
     projectId: "05a00f6m",
     dataset: "production",
@@ -18,6 +18,5 @@ export default defineConfig({
   }), react()],
   adapter: vercel({
     imageService: true,
-    devImageService: 'squoosh',
   })
 });
