@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro'
+import SessionViewMore from '../components/SessionViewMore.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="h-screen flex flex-col">
+		<header class="bg-gray-800 flex items-center justify-center py-4">
+			<img src="/public/devJeffersonCabral.svg" alt="devJeffersonCabral" srcset="">
+		</header>
+		<div class="flex flex-col gap-4 items-center p-8">
+			<Navigation />
+			<SessionViewMore buttonTitle='View more' href='#' title='Resume'/>
+		</div>
+		<footer class="bg-gray-800 p-8 flex flex-col gap-4 items-center text-gray-50">
+			<div class="w-full">
+				<h3 class="font-semibold text-lg">Socail media</h3>
+			</div>
+
+			<div class="flex gap-4 w-full items-center justify-center">
+				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
+					<img src="/public/icons/github-logo.svg" alt="github logo" srcset="">
+					Jeffersontk
+				</a>
+				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
+					<img src="/public/icons/linkedin-logo.svg" alt="linkedin logo" srcset="">
+					Jeffersonsbrito
+				</a>
+			</div>
+			<div class="w-full h-[1px] bg-gray-50" />
+			<h3 class="font-light text-lg">Developed by Jefferson S. Brito Cabral</h3>
+		</footer>
+	</main>
+</Layout>

@@ -1,0 +1,17 @@
+---
+interface Props {
+	title: string;
+	icon: string;
+	href: string;
+}
+
+const { href, title, icon } = Astro.props;
+---
+
+<a
+  class="max-w-[100px] border border-gray-600 rounded-md p-4 flex flex-col gap-2 items-center justify-center"
+  href={href}
+>
+  <img src={`/public/icons/${icon}.svg`} alt={title} srcset="">
+  {title}
+</a>
