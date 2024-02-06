@@ -17,9 +17,6 @@ export default defineConfig({
     studioBasePath: "/admin"
   }), react()],
   adapter: vercel({
-    imagesConfig: {
-      sizes: [320, 640, 1280],
-    },
     imageService: true,
     devImageService: 'squoosh',
   })
