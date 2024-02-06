@@ -16,5 +16,11 @@ export default defineConfig({
     // Access the Studio on your.url/admin
     studioBasePath: "/admin"
   }), react()],
-  adapter: vercel()
+  adapter: vercel({
+    imagesConfig: {
+      sizes: [320, 640, 1280],
+    },
+    imageService: true,
+    devImageService: 'squoosh',
+  })
 });
