@@ -3,13 +3,14 @@ import LinkNavigation from './LinkNavigation.astro'
 
 interface Props {
   complementaryClass?: string
+  theme: 'light' | 'dark'
 }
 
-const {complementaryClass} = Astro.props
+const {complementaryClass, theme} = Astro.props
 ---
 
-<nav class={`grid grid-cols-3 gap-4 ${complementaryClass}`}>
-  <LinkNavigation href='#' icon='read-cv-logo' title='Resume'/>
-  <LinkNavigation href='#' icon='notepad' title='Blog'/>
-  <LinkNavigation href='#' icon='code-block' title='Project'/>
+<nav class={`grid grid-cols-3 gap-4 ${complementaryClass} `}>
+  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Resume'/>
+  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Blog'/>
+  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Project'/>
 </nav>

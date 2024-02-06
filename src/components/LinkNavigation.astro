@@ -1,18 +1,46 @@
 ---
+import ReadCV from './Icons/ReadCV';
+import Blog from './Icons/Blog';
+import Project from './Icons/Project';
+
 interface Props {
 	title: string;
-	icon: string;
+	fill: string;
 	href: string;
 }
 
-const { href, title, icon } = Astro.props;
+const { href, title, fill } = Astro.props;
 ---
-
-<a
-  class="max-w-[100px] h-full border border-gray-600 lg:border-gray-50 text-gray-800 font-medium lg:text-gray-50
-  rounded-md p-4 lg:p-1 lg:px-2 flex flex-col gap-2 items-center justify-center"
-  href={href}
->
-  <img src={`/public/icons/${icon}.svg`} alt={title} srcset="">
-  {title}
-</a>
+{
+  title == 'Resume' &&
+  <a
+    class="max-w-[100px] h-full border border-gray-600 lg:border-gray-50 text-gray-800 font-medium lg:text-gray-50
+    rounded-md p-4 lg:p-1 lg:px-2 flex flex-col gap-2 items-center justify-center"
+    href={href}
+  >
+    <ReadCV fill={fill}/>
+    {title}
+  </a>
+}
+{
+  title == 'Blog' &&
+  <a
+    class="max-w-[100px] h-full border border-gray-600 lg:border-gray-50 text-gray-800 font-medium lg:text-gray-50
+    rounded-md p-4 lg:p-1 lg:px-2 flex flex-col gap-2 items-center justify-center"
+    href={href}
+  >
+    <Blog fill={fill}/>
+    {title}
+  </a>
+}
+{
+  title == 'Project' &&
+  <a
+    class="max-w-[100px] h-full border border-gray-600 lg:border-gray-50 text-gray-800 font-medium lg:text-gray-50
+    rounded-md p-4 lg:p-1 lg:px-2 flex flex-col gap-2 items-center justify-center"
+    href={href}
+  >
+    <Project fill={fill}/>
+    {title}
+  </a>
+}
