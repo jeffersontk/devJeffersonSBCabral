@@ -5,15 +5,22 @@ import SessionViewMore from '../components/SessionViewMore.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="h-screen flex flex-col">
-		<header class="bg-gray-800 flex items-center justify-center py-4">
-			<img src="/public/devJeffersonCabral.svg" alt="devJeffersonCabral" srcset="">
+	<main class="w-full h-screen flex flex-col items-center">
+		<header class="w-full h-24 bg-gray-800 py-4 flex items-center justify-center">
+			<div class="w-full max-w-[1280px] flex items-center justify-center lg:justify-between ">
+				<img src="/public/devJeffersonCabral.svg" alt="devJeffersonCabral" srcset="">
+				<Navigation complementaryClass="hidden lg:grid"/>
+			</div>
 		</header>
-		<div class="flex flex-col gap-4 items-center p-8">
-			<Navigation />
-			<SessionViewMore buttonTitle='View more' href='#' title='Resume'/>
+		<div class="w-full max-w-[1280px] flex flex-col gap-4 items-center p-8 md:px-0">
+			<Navigation complementaryClass="md:hidden"/>
+			<SessionViewMore buttonTitle='View more' href='#' title='Resume' />
+			<SessionViewMore buttonTitle='View all' href='#' title='Blog'/>
+			<SessionViewMore buttonTitle='View all' href='#' title='Projects'/>
+			<SessionViewMore buttonTitle='View all' href='#' title='Contact' visibleButton={false}/>
+
 		</div>
-		<footer class="bg-gray-800 p-8 flex flex-col gap-4 items-center text-gray-50">
+		<footer class="w-full bg-gray-800 p-8 flex flex-col gap-4 items-center text-gray-50">
 			<div class="w-full">
 				<h3 class="font-semibold text-lg">Socail media</h3>
 			</div>

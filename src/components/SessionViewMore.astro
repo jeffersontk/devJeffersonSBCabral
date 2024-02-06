@@ -3,15 +3,23 @@ interface Props {
 	title: string;
 	href: string;
   buttonTitle: string;
+  visibleButton?: boolean;
 }
 
-
-const { href, title, buttonTitle } = Astro.props;
+const { href, title, buttonTitle, visibleButton = true } = Astro.props;
 ---
-<div class="w-full flex items-center justify-between">
-  <h3>{title}</h3>
-  <a href={href} class="bg-gray-800 text-gray-50 text-sm flex items-center justify-center pl-3 pr-1 py-1 rounded-md">
-    {buttonTitle}
-    <img src="/public/icons/caret-right.svg" alt="arrow right" srcset="" width="24">
-  </a>
-</div>
+{
+  visibleButton ? 
+  <div class="w-full flex items-center justify-between">
+    <h3 class="font-semibold text-lg text-gray-800">{title}</h3>
+    <a href={href} class="bg-gray-800 text-gray-50 text-sm flex items-center justify-center pl-3 pr-1 py-1 rounded-md">
+      {buttonTitle}
+
+      <img src="/public/icons/caret-right.svg" alt="arrow right" srcset="" width="24">
+    </a>
+  </div>
+  :
+  <div class="w-full flex items-center justify-between">
+    <h3 class="font-semibold text-lg text-gray-800">{title}</h3>
+  </div> 
+} 
