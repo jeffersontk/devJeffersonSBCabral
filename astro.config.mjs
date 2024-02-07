@@ -3,11 +3,11 @@ import tailwind from "@astrojs/tailwind";
 import { sanityIntegration } from "@sanity/astro";
 import react from "@astrojs/react";
 
-import vercel from "@astrojs/vercel/static";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   integrations: [tailwind(), sanityIntegration({
     projectId: "05a00f6m",
     dataset: "production",
@@ -16,7 +16,5 @@ export default defineConfig({
     // Access the Studio on your.url/admin
     studioBasePath: "/admin"
   }), react()],
-  adapter: vercel({
-    imageService: true,
-  })
+  adapter: vercel(),
 });
