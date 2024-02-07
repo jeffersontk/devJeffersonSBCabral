@@ -5,13 +5,14 @@ import ResumeCard from '../components/ResumeCard.astro'
 import SessionViewMore from '../components/SessionViewMore.astro';
 import Github from '../components/Icons/github';
 import Linkedin from '../components/Icons/linkedin';
+import Logo from '../components/Icons/logo';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main class="w-full h-screen flex flex-col items-center">
 		<header class="w-full h-24 bg-gray-800 py-4 flex items-center justify-center">
 			<div class="w-full max-w-[1280px] flex items-center justify-center lg:justify-between ">
-				<img src="/public/devJeffersonCabral.svg" alt="devJeffersonCabral" srcset="">
+				<Logo />
 				<Navigation complementaryClass="hidden lg:grid" theme='light'/>
 			</div>
 		</header>

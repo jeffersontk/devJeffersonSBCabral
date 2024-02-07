@@ -1,4 +1,6 @@
 ---
+import ArrowRight from './Icons/arrowRight';
+
 interface Props {
 	title: string;
 	href: string;
@@ -15,7 +17,7 @@ const { href, title, buttonTitle, visibleButton = true } = Astro.props;
     <a href={href} class="bg-gray-800 text-gray-50 text-sm flex items-center justify-center pl-3 pr-1 py-1 rounded-md">
       {buttonTitle}
 
-      <img src="/public/icons/caret-right.svg" alt="arrow right" srcset="" width="24">
+      <ArrowRight />
     </a>
   </div>
   :
