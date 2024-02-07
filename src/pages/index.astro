@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro'
+import ResumeCard from '../components/ResumeCard.astro'
 import SessionViewMore from '../components/SessionViewMore.astro';
+import Github from '../components/Icons/github';
+import Linkedin from '../components/Icons/linkedin';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -12,26 +15,28 @@ import SessionViewMore from '../components/SessionViewMore.astro';
 				<Navigation complementaryClass="hidden lg:grid" theme='light'/>
 			</div>
 		</header>
-		<div class="w-full max-w-[1280px] flex flex-col gap-4 items-center p-8 md:px-0">
+		<div class="w-full max-w-[1280px] flex flex-col lg:grid lg:grid-cols-2 gap-4 items-center p-8 md:px-0">
 			<Navigation complementaryClass="md:hidden" theme='dark'/>
-			<SessionViewMore buttonTitle='View more' href='#' title='Resume' />
+			<div class="flex flex-col gap-4">
+					<SessionViewMore buttonTitle='View more' href='#' title='Resume' />
+					<ResumeCard />
+			</div>
 			<SessionViewMore buttonTitle='View all' href='#' title='Blog'/>
 			<SessionViewMore buttonTitle='View all' href='#' title='Projects'/>
 			<SessionViewMore buttonTitle='View all' href='#' title='Contact' visibleButton={false}/>
-
 		</div>
 		<footer class="w-full bg-gray-800 p-8 flex flex-col gap-4 items-center text-gray-50">
-			<div class="w-full">
+			<div class="w-full md:hidden">
 				<h3 class="font-semibold text-lg">Socail media</h3>
 			</div>
 
 			<div class="flex gap-4 w-full items-center justify-center">
 				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
-					<img src="/public/icons/github-logo.svg" alt="github logo" srcset="">
+					<Github fill="#f8fafc"/>
 					Jeffersontk
 				</a>
 				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
-					<img src="/public/icons/linkedin-logo.svg" alt="linkedin logo" srcset="">
+					<Linkedin fill="#f8fafc"/>
 					Jeffersonsbrito
 				</a>
 			</div>
