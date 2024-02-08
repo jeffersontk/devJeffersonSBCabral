@@ -13,7 +13,7 @@ const { href, title, buttonTitle, visibleButton = true } = Astro.props;
 {
   visibleButton ? 
   <div class="w-full flex items-center justify-between">
-    <h3 class="font-semibold text-lg text-gray-800">{title}</h3>
+    <h3 class="font-semibold text-lg lg:text-2xl text-gray-800">{title}</h3>
     <a href={href} class="bg-gray-800 text-gray-50 text-sm flex items-center justify-center pl-3 pr-1 py-1 rounded-md">
       {buttonTitle}
 
@@ -22,6 +22,6 @@ const { href, title, buttonTitle, visibleButton = true } = Astro.props;
   </div>
   :
   <div class="w-full flex items-center justify-between">
-    <h3 class="font-semibold text-lg text-gray-800">{title}</h3>
+    <h3 class="font-semibold text-lg lg:text-2xl text-gray-800">{title}</h3>
   </div> 
 } 

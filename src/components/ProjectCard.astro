@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+	title: string;
+	discription: string;
+	href: string;
+  tags: string[];
+  thumbnail: string
+}
+
+const { href, title, discription, tags, thumbnail } = Astro.props;
+---
+
+<a href={href} class="w-full h-full max-h-48 flex gap-2 border border-gray-200 p-2 rounded-md shadow-md">
+  <div class="w-full flex flex-col gap-1">
+    <h2 class="text-gray-700 font-semibold text-ellipsis line-clamp-2">{title}</h2>
+    <div class="flex items-center gap-4">
+      {tags.map(tag => (<span class="py-1 px-2 bg-gray-800 text-gray-50 rounded">{tag}</span>))}
+    </div>
+    <p class="text-ellipsis line-clamp-3 md:line-clamp-4 lg:line-clamp-2">{discription}</p>
+  </div>
+</a>

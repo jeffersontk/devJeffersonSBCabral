@@ -8,7 +8,8 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [tailwind(), sanityIntegration({
+  integrations: [tailwind(), 
+  sanityIntegration({
     projectId: "05a00f6m",
     dataset: "production",
     apiVersion: '2024-02-05',

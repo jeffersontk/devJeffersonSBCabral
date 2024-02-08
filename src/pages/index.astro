@@ -3,46 +3,29 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro'
 import ResumeCard from '../components/ResumeCard.astro'
 import SessionViewMore from '../components/SessionViewMore.astro';
-import Github from '../components/Icons/github';
-import Linkedin from '../components/Icons/linkedin';
-import Logo from '../components/Icons/logo';
+import BlogCardList from '../components/BlogCardList.astro';
+import ProjectCardList from '../components/ProjectCardList.astro';
+import FormContact from '../components/FormContact.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main class="w-full h-screen flex flex-col items-center">
-		<header class="w-full h-24 bg-gray-800 py-4 flex items-center justify-center">
-			<div class="w-full max-w-[1280px] flex items-center justify-center lg:justify-between ">
-				<Logo />
-				<Navigation complementaryClass="hidden lg:grid" theme='light'/>
-			</div>
-		</header>
-		<div class="w-full max-w-[1280px] flex flex-col lg:grid lg:grid-cols-2 gap-4 items-center p-8 md:px-0">
-			<Navigation complementaryClass="md:hidden" theme='dark'/>
-			<div class="flex flex-col gap-4">
-					<SessionViewMore buttonTitle='View more' href='#' title='Resume' />
-					<ResumeCard />
-			</div>
-			<SessionViewMore buttonTitle='View all' href='#' title='Blog'/>
-			<SessionViewMore buttonTitle='View all' href='#' title='Projects'/>
-			<SessionViewMore buttonTitle='View all' href='#' title='Contact' visibleButton={false}/>
+<Layout title="Home - dev Jefferson Cabral">
+	<section class="w-full max-w-[1280px] flex flex-col xl:grid xl:grid-cols-2 xl:grid-rows-2 gap-4 items-center p-8 xl:px-0">
+		<Navigation complementaryClass="md:hidden" theme='dark'/>
+		<div class="flex flex-col gap-4 h-full ">
+				<SessionViewMore buttonTitle='View more' href='/resume' title='Resume' />
+				<ResumeCard />
 		</div>
-		<footer class="w-full bg-gray-800 p-8 flex flex-col gap-4 items-center text-gray-50">
-			<div class="w-full md:hidden">
-				<h3 class="font-semibold text-lg">Socail media</h3>
-			</div>
-
-			<div class="flex gap-4 w-full items-center justify-center">
-				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
-					<Github fill="#f8fafc"/>
-					Jeffersontk
-				</a>
-				<a href="#" class="w-full max-w-[160px] h-24 flex flex-col gap-2 items-center justify-center border border-gray-50 p-2 rounded">
-					<Linkedin fill="#f8fafc"/>
-					Jeffersonsbrito
-				</a>
-			</div>
-			<div class="w-full h-[1px] bg-gray-50" />
-			<h3 class="font-light text-lg">Developed by Jefferson S. Brito Cabral</h3>
-		</footer>
-	</main>
+		<div class="flex flex-col gap-4 h-full">
+			<SessionViewMore buttonTitle='View all' href='/blog' title='Blog'/>
+			<BlogCardList />
+		</div>
+		<div class="flex flex-col gap-4 h-full">
+			<SessionViewMore buttonTitle='View all' href='/project' title='Projects'/>
+			<ProjectCardList />
+		</div>
+		<div class="flex flex-col gap-4 h-full w-full">
+			<SessionViewMore buttonTitle='View all' href='#contact' title='Contact' visibleButton={false}/>
+			<FormContact />
+		</div>
+	</section>
 </Layout>

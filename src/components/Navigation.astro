@@ -9,8 +9,8 @@ interface Props {
 const {complementaryClass, theme} = Astro.props
 ---
 
-<nav class={`grid grid-cols-3 gap-4 ${complementaryClass} `}>
-  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Resume'/>
-  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Blog'/>
-  <LinkNavigation href='#' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Project'/>
+<nav class={`w-full lg:max-w-[350px] grid grid-cols-3 gap-4 ${complementaryClass} `}>
+  <LinkNavigation href='/resume' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Resume'/>
+  <LinkNavigation href='/blog' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Blog'/>
+  <LinkNavigation href='/project' fill={theme === 'light' ? '#f8fafc' : '#475569'} title='Project'/>
 </nav>
